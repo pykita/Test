@@ -16,7 +16,7 @@ namespace ShopPlus.Storage
             m_StorageEntities.Dispose();
         }
 
-        public IQueryable<Brands> Brends()
+        public IQueryable<Brands> Brands()
         {
             return m_StorageEntities.Brands;
         }

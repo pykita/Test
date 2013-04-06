@@ -1,0 +1,10 @@
+﻿@model ShopPlus.Models.Brands.BrandItem
+@{
+    ViewBag.Title = "Редактировать";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Edit", "Brands"))
+{
+    <span>Имя: </span>@Html.EditorFor(x => x.Name)
+    <input type="submit" value="Сохранить"/>
+}

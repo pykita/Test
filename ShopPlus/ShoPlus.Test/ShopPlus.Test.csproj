@@ -8,8 +8,8 @@
     <ProjectGuid>{C72B99ED-96B6-40C8-BC63-183B5CA97E63}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShoPlus.Test</RootNamespace>
-    <AssemblyName>ShoPlus.Test</AssemblyName>
+    <RootNamespace>ShopPlus.Test</RootNamespace>
+    <AssemblyName>ShopPlus.Test</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -44,8 +44,12 @@
     <Reference Include="nunit.mocks">
       <HintPath>..\..\dll\nunit.mocks.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\dll\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,29 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\BrandsServiceTest.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopPlus\ShopPlus.csproj">
       <Project>{58AA22D3-E4BF-475A-8B69-DB5D58776DB7}</Project>
       <Name>ShopPlus</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,7 +5,7 @@ namespace ShopPlus.Storage
 {
     public interface IBrandsStorage : IDisposable
     {
-        IQueryable<Brands> Brends();
+        IQueryable<Brands> Brands();
         void AddBrand(Brands brand);
         void DeleteBrand(Brands brand);
         void SaveChanges();
