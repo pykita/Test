@@ -1,0 +1,1633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gb_MarketPlusModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="gb_MarketPlusModelStoreContainer">
+          <EntitySet Name="AmountTypes" EntityType="gb_MarketPlusModel.Store.AmountTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Areas" EntityType="gb_MarketPlusModel.Store.Areas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Blacklist" EntityType="gb_MarketPlusModel.Store.Blacklist" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Brands" EntityType="gb_MarketPlusModel.Store.Brands" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="gb_MarketPlusModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cities" EntityType="gb_MarketPlusModel.Store.Cities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currencies" EntityType="gb_MarketPlusModel.Store.Currencies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DelivaryPays" EntityType="gb_MarketPlusModel.Store.DelivaryPays" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DelivaryTypes" EntityType="gb_MarketPlusModel.Store.DelivaryTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocumentTypes" EntityType="gb_MarketPlusModel.Store.DocumentTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Newsletters" EntityType="gb_MarketPlusModel.Store.Newsletters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderProducts" EntityType="gb_MarketPlusModel.Store.OrderProducts" store:Type="Tables" store:Schema="dbo" store:Name="OrderProducts">
+            <DefiningQuery>SELECT 
+      [OrderProducts].[OrderId] AS [OrderId], 
+      [OrderProducts].[ProductId] AS [ProductId]
+      FROM [dbo].[OrderProducts] AS [OrderProducts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Orders" EntityType="gb_MarketPlusModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderStatus" EntityType="gb_MarketPlusModel.Store.OrderStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderTypes" EntityType="gb_MarketPlusModel.Store.OrderTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentTypes" EntityType="gb_MarketPlusModel.Store.PaymentTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductProperties" EntityType="gb_MarketPlusModel.Store.ProductProperties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="gb_MarketPlusModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Properties" EntityType="gb_MarketPlusModel.Store.Properties" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PropertyValues" EntityType="gb_MarketPlusModel.Store.PropertyValues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Shops" EntityType="gb_MarketPlusModel.Store.Shops" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubCategories" EntityType="gb_MarketPlusModel.Store.SubCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Suppliers" EntityType="gb_MarketPlusModel.Store.Suppliers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="gb_MarketPlusModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Transporters" EntityType="gb_MarketPlusModel.Store.Transporters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Units" EntityType="gb_MarketPlusModel.Store.Units" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="gb_MarketPlusModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_OrderProducts_Orders" Association="gb_MarketPlusModel.Store.FK_OrderProducts_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderProducts" EntitySet="OrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_AmountTypes" Association="gb_MarketPlusModel.Store.FK_Orders_AmountTypes">
+            <End Role="AmountTypes" EntitySet="AmountTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Areas" Association="gb_MarketPlusModel.Store.FK_Orders_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Cities" Association="gb_MarketPlusModel.Store.FK_Orders_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DelivaryPays" Association="gb_MarketPlusModel.Store.FK_Orders_DelivaryPays">
+            <End Role="DelivaryPays" EntitySet="DelivaryPays" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DelivaryTypes" Association="gb_MarketPlusModel.Store.FK_Orders_DelivaryTypes">
+            <End Role="DelivaryTypes" EntitySet="DelivaryTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DocumentTypes" Association="gb_MarketPlusModel.Store.FK_Orders_DocumentTypes">
+            <End Role="DocumentTypes" EntitySet="DocumentTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="gb_MarketPlusModel.Store.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderTypes" Association="gb_MarketPlusModel.Store.FK_Orders_OrderTypes">
+            <End Role="OrderTypes" EntitySet="OrderTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_PaymentTypes" Association="gb_MarketPlusModel.Store.FK_Orders_PaymentTypes">
+            <End Role="PaymentTypes" EntitySet="PaymentTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_Products" Association="gb_MarketPlusModel.Store.FK_ProductProperties_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_Properties" Association="gb_MarketPlusModel.Store.FK_ProductProperties_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_PropertyValues" Association="gb_MarketPlusModel.Store.FK_ProductProperties_PropertyValues">
+            <End Role="PropertyValues" EntitySet="PropertyValues" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Categories" Association="gb_MarketPlusModel.Store.FK_Properties_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_SubCategories" Association="gb_MarketPlusModel.Store.FK_Properties_SubCategories">
+            <End Role="SubCategories" EntitySet="SubCategories" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyValues_Products" Association="gb_MarketPlusModel.Store.FK_PropertyValues_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PropertyValues" EntitySet="PropertyValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubCategories_Categories" Association="gb_MarketPlusModel.Store.FK_SubCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="SubCategories" EntitySet="SubCategories" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AmountTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="char" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Blacklist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Contact" Type="char" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="BrandName" Type="varchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SecondCategoryName" Type="varchar" MaxLength="50" />
+          <Property Name="MultimediaId" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="MetaTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="MetaKeywords" Type="nvarchar" MaxLength="800" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="MetaKeywordsTags" Type="nvarchar" MaxLength="800" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="smallint" Nullable="false" />
+          <Property Name="RussianCityName" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="UrkainianCityName" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyName" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Rate" Type="decimal" Nullable="false" />
+          <Property Name="PriceFormat" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="DelivaryPays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="DelivaryTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="char" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="DocumentTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="char" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Newsletters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view '1gb_MarketPlus.dbo.OrderProducts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="OrderProducts">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ManagerId" Type="int" Nullable="false" />
+          <Property Name="OrderTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="DelivaryTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="CitieId" Type="smallint" Nullable="false" />
+          <Property Name="DelivaryPayId" Type="tinyint" Nullable="false" />
+          <Property Name="OrderStatusId" Type="tinyint" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="DispatchId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="DeliveryTime" Type="datetime" Nullable="false" />
+          <Property Name="DocumentTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="IsDocumentRequaried" Type="bit" Nullable="false" />
+          <Property Name="IsRequariedAnotherDocument" Type="bit" Nullable="false" />
+          <Property Name="AmountTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="Comment" Type="nchar" Nullable="false" MaxLength="512" />
+          <Property Name="AdminComment" Type="nchar" Nullable="false" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="char" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="OrderTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="PaymentTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="ProductProperties">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="PropertyValueId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="20" />
+          <Property Name="MainArticleName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="RetailPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TradePrice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PrimaryPrice" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PriceUAH" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Discount" Type="tinyint" />
+          <Property Name="IsWarranty" Type="bit" Nullable="false" />
+          <Property Name="WarrantyPeriod" Type="smallint" />
+          <Property Name="IsHotProduct" Type="bit" Nullable="false" />
+          <Property Name="IsFreeDelivery" Type="bit" Nullable="false" />
+          <Property Name="Availability" Type="tinyint" Nullable="false" />
+          <Property Name="MetaTitle" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="MetaKeywords" Type="nvarchar" MaxLength="800" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="2000" />
+          <Property Name="MetaKeywordsTags" Type="nvarchar" MaxLength="800" />
+        </EntityType>
+        <EntityType Name="Properties">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="int" Nullable="false" />
+          <Property Name="PropertyName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="SubCategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="PropertyValues">
+          <Key>
+            <PropertyRef Name="ValueId" />
+          </Key>
+          <Property Name="ValueId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Shops">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="tinyint" Nullable="false" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="SubCategories">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="int" Nullable="false" />
+          <Property Name="SubCategoryName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="bigint" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar" Nullable="false" MaxLength="800" />
+          <Property Name="ManagerName" Type="nvarchar" Nullable="false" MaxLength="80" />
+          <Property Name="PhoneNumber" Type="char" Nullable="false" MaxLength="13" />
+          <Property Name="ICQ" Type="char" MaxLength="9" />
+          <Property Name="Skype" Type="char" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Schedule" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Transporters">
+          <Key>
+            <PropertyRef Name="TransporterId" />
+          </Key>
+          <Property Name="TransporterId" Type="smallint" Nullable="false" />
+          <Property Name="TransporterName" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="PriceUAH" Type="smallint" Nullable="false" />
+          <Property Name="PriceUSD" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="smallint" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FIO" Type="nchar" Nullable="false" MaxLength="256" />
+          <Property Name="Email" Type="nchar" Nullable="false" MaxLength="256" />
+          <Property Name="PhoneNumber" Type="nchar" Nullable="false" MaxLength="16" />
+          <Property Name="IsDeteled" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_OrderProducts_Orders">
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="1" />
+          <End Role="OrderProducts" Type="gb_MarketPlusModel.Store.OrderProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderProducts">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_AmountTypes">
+          <End Role="AmountTypes" Type="gb_MarketPlusModel.Store.AmountTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AmountTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AmountTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Areas">
+          <End Role="Areas" Type="gb_MarketPlusModel.Store.Areas" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Cities">
+          <End Role="Cities" Type="gb_MarketPlusModel.Store.Cities" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CitieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DelivaryPays">
+          <End Role="DelivaryPays" Type="gb_MarketPlusModel.Store.DelivaryPays" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DelivaryPays">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DelivaryPayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DelivaryTypes">
+          <End Role="DelivaryTypes" Type="gb_MarketPlusModel.Store.DelivaryTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DelivaryTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DocumentTypes">
+          <End Role="DocumentTypes" Type="gb_MarketPlusModel.Store.DocumentTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Role="OrderStatus" Type="gb_MarketPlusModel.Store.OrderStatus" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OrderStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderTypes">
+          <End Role="OrderTypes" Type="gb_MarketPlusModel.Store.OrderTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_PaymentTypes">
+          <End Role="PaymentTypes" Type="gb_MarketPlusModel.Store.PaymentTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Store.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="PaymentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_Products">
+          <End Role="Products" Type="gb_MarketPlusModel.Store.Products" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.Store.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_Properties">
+          <End Role="Properties" Type="gb_MarketPlusModel.Store.Properties" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.Store.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_PropertyValues">
+          <End Role="PropertyValues" Type="gb_MarketPlusModel.Store.PropertyValues" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.Store.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValues">
+              <PropertyRef Name="ValueId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="PropertyValueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Categories">
+          <End Role="Categories" Type="gb_MarketPlusModel.Store.Categories" Multiplicity="0..1" />
+          <End Role="Properties" Type="gb_MarketPlusModel.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_SubCategories">
+          <End Role="SubCategories" Type="gb_MarketPlusModel.Store.SubCategories" Multiplicity="0..1" />
+          <End Role="Properties" Type="gb_MarketPlusModel.Store.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategories">
+              <PropertyRef Name="SubCategoryId" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="SubCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyValues_Products">
+          <End Role="Products" Type="gb_MarketPlusModel.Store.Products" Multiplicity="1" />
+          <End Role="PropertyValues" Type="gb_MarketPlusModel.Store.PropertyValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="PropertyValues">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubCategories_Categories">
+          <End Role="Categories" Type="gb_MarketPlusModel.Store.Categories" Multiplicity="1" />
+          <End Role="SubCategories" Type="gb_MarketPlusModel.Store.SubCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="SubCategories">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gb_MarketPlusModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="StorageEntity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AmountTypes" EntityType="gb_MarketPlusModel.AmountTypes" />
+          <EntitySet Name="Areas" EntityType="gb_MarketPlusModel.Areas" />
+          <EntitySet Name="Blacklist" EntityType="gb_MarketPlusModel.Blacklist" />
+          <EntitySet Name="Brands" EntityType="gb_MarketPlusModel.Brands" />
+          <EntitySet Name="Categories" EntityType="gb_MarketPlusModel.Categories" />
+          <EntitySet Name="Cities" EntityType="gb_MarketPlusModel.Cities" />
+          <EntitySet Name="Currencies" EntityType="gb_MarketPlusModel.Currencies" />
+          <EntitySet Name="DelivaryPays" EntityType="gb_MarketPlusModel.DelivaryPays" />
+          <EntitySet Name="DelivaryTypes" EntityType="gb_MarketPlusModel.DelivaryTypes" />
+          <EntitySet Name="DocumentTypes" EntityType="gb_MarketPlusModel.DocumentTypes" />
+          <EntitySet Name="Newsletters" EntityType="gb_MarketPlusModel.Newsletters" />
+          <EntitySet Name="OrderProducts" EntityType="gb_MarketPlusModel.OrderProducts" />
+          <EntitySet Name="Orders" EntityType="gb_MarketPlusModel.Orders" />
+          <EntitySet Name="OrderStatus" EntityType="gb_MarketPlusModel.OrderStatus" />
+          <EntitySet Name="OrderTypes" EntityType="gb_MarketPlusModel.OrderTypes" />
+          <EntitySet Name="PaymentTypes" EntityType="gb_MarketPlusModel.PaymentTypes" />
+          <EntitySet Name="ProductProperties" EntityType="gb_MarketPlusModel.ProductProperties" />
+          <EntitySet Name="Products" EntityType="gb_MarketPlusModel.Products" />
+          <EntitySet Name="Properties" EntityType="gb_MarketPlusModel.Properties" />
+          <EntitySet Name="PropertyValues" EntityType="gb_MarketPlusModel.PropertyValues" />
+          <EntitySet Name="Shops" EntityType="gb_MarketPlusModel.Shops" />
+          <EntitySet Name="SubCategories" EntityType="gb_MarketPlusModel.SubCategories" />
+          <EntitySet Name="Suppliers" EntityType="gb_MarketPlusModel.Suppliers" />
+          <EntitySet Name="sysdiagrams" EntityType="gb_MarketPlusModel.sysdiagrams" />
+          <EntitySet Name="Transporters" EntityType="gb_MarketPlusModel.Transporters" />
+          <EntitySet Name="Units" EntityType="gb_MarketPlusModel.Units" />
+          <EntitySet Name="Users" EntityType="gb_MarketPlusModel.Users" />
+          <AssociationSet Name="FK_Orders_AmountTypes" Association="gb_MarketPlusModel.FK_Orders_AmountTypes">
+            <End Role="AmountTypes" EntitySet="AmountTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Areas" Association="gb_MarketPlusModel.FK_Orders_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Categories" Association="gb_MarketPlusModel.FK_Properties_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubCategories_Categories" Association="gb_MarketPlusModel.FK_SubCategories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="SubCategories" EntitySet="SubCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Cities" Association="gb_MarketPlusModel.FK_Orders_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DelivaryPays" Association="gb_MarketPlusModel.FK_Orders_DelivaryPays">
+            <End Role="DelivaryPays" EntitySet="DelivaryPays" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DelivaryTypes" Association="gb_MarketPlusModel.FK_Orders_DelivaryTypes">
+            <End Role="DelivaryTypes" EntitySet="DelivaryTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_DocumentTypes" Association="gb_MarketPlusModel.FK_Orders_DocumentTypes">
+            <End Role="DocumentTypes" EntitySet="DocumentTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderProducts_Orders" Association="gb_MarketPlusModel.FK_OrderProducts_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderProducts" EntitySet="OrderProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderStatus" Association="gb_MarketPlusModel.FK_Orders_OrderStatus">
+            <End Role="OrderStatus" EntitySet="OrderStatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_OrderTypes" Association="gb_MarketPlusModel.FK_Orders_OrderTypes">
+            <End Role="OrderTypes" EntitySet="OrderTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_PaymentTypes" Association="gb_MarketPlusModel.FK_Orders_PaymentTypes">
+            <End Role="PaymentTypes" EntitySet="PaymentTypes" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_Products" Association="gb_MarketPlusModel.FK_ProductProperties_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_Properties" Association="gb_MarketPlusModel.FK_ProductProperties_Properties">
+            <End Role="Properties" EntitySet="Properties" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProperties_PropertyValues" Association="gb_MarketPlusModel.FK_ProductProperties_PropertyValues">
+            <End Role="PropertyValues" EntitySet="PropertyValues" />
+            <End Role="ProductProperties" EntitySet="ProductProperties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PropertyValues_Products" Association="gb_MarketPlusModel.FK_PropertyValues_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="PropertyValues" EntitySet="PropertyValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_SubCategories" Association="gb_MarketPlusModel.FK_Properties_SubCategories">
+            <End Role="SubCategories" EntitySet="SubCategories" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AmountTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_AmountTypes" FromRole="AmountTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_Areas" FromRole="Areas" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Blacklist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="3000" Unicode="true" FixedLength="false" />
+          <Property Name="Contact" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="BrandName" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SecondCategoryName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MultimediaId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MetaTitle" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="MetaKeywords" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+          <Property Name="MetaDescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="MetaKeywordsTags" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Properties" Relationship="gb_MarketPlusModel.FK_Properties_Categories" FromRole="Categories" ToRole="Properties" />
+          <NavigationProperty Name="SubCategories" Relationship="gb_MarketPlusModel.FK_SubCategories_Categories" FromRole="Categories" ToRole="SubCategories" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int16" Nullable="false" />
+          <Property Name="RussianCityName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="UrkainianCityName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_Cities" FromRole="Cities" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="CurrencyId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CurrencyName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Rate" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="PriceFormat" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DelivaryPays">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_DelivaryPays" FromRole="DelivaryPays" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="DelivaryTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_DelivaryTypes" FromRole="DelivaryTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="DocumentTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_DocumentTypes" FromRole="DocumentTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Newsletters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OrderProducts">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_OrderProducts_Orders" FromRole="OrderProducts" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ManagerId" Type="Int32" Nullable="false" />
+          <Property Name="OrderTypeId" Type="Byte" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="Byte" Nullable="false" />
+          <Property Name="DelivaryTypeId" Type="Byte" Nullable="false" />
+          <Property Name="AreaId" Type="Int32" Nullable="false" />
+          <Property Name="CitieId" Type="Int16" Nullable="false" />
+          <Property Name="DelivaryPayId" Type="Byte" Nullable="false" />
+          <Property Name="OrderStatusId" Type="Byte" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="DispatchId" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="DeliveryTime" Type="DateTime" Nullable="false" />
+          <Property Name="DocumentTypeId" Type="Byte" Nullable="false" />
+          <Property Name="IsDocumentRequaried" Type="Boolean" Nullable="false" />
+          <Property Name="IsRequariedAnotherDocument" Type="Boolean" Nullable="false" />
+          <Property Name="AmountTypeId" Type="Byte" Nullable="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="true" />
+          <Property Name="AdminComment" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="AmountTypes" Relationship="gb_MarketPlusModel.FK_Orders_AmountTypes" FromRole="Orders" ToRole="AmountTypes" />
+          <NavigationProperty Name="Areas" Relationship="gb_MarketPlusModel.FK_Orders_Areas" FromRole="Orders" ToRole="Areas" />
+          <NavigationProperty Name="Cities" Relationship="gb_MarketPlusModel.FK_Orders_Cities" FromRole="Orders" ToRole="Cities" />
+          <NavigationProperty Name="DelivaryPays" Relationship="gb_MarketPlusModel.FK_Orders_DelivaryPays" FromRole="Orders" ToRole="DelivaryPays" />
+          <NavigationProperty Name="DelivaryTypes" Relationship="gb_MarketPlusModel.FK_Orders_DelivaryTypes" FromRole="Orders" ToRole="DelivaryTypes" />
+          <NavigationProperty Name="DocumentTypes" Relationship="gb_MarketPlusModel.FK_Orders_DocumentTypes" FromRole="Orders" ToRole="DocumentTypes" />
+          <NavigationProperty Name="OrderProducts" Relationship="gb_MarketPlusModel.FK_OrderProducts_Orders" FromRole="Orders" ToRole="OrderProducts" />
+          <NavigationProperty Name="OrderStatus" Relationship="gb_MarketPlusModel.FK_Orders_OrderStatus" FromRole="Orders" ToRole="OrderStatus" />
+          <NavigationProperty Name="OrderTypes" Relationship="gb_MarketPlusModel.FK_Orders_OrderTypes" FromRole="Orders" ToRole="OrderTypes" />
+          <NavigationProperty Name="PaymentTypes" Relationship="gb_MarketPlusModel.FK_Orders_PaymentTypes" FromRole="Orders" ToRole="PaymentTypes" />
+        </EntityType>
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_OrderStatus" FromRole="OrderStatus" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="OrderTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_OrderTypes" FromRole="OrderTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="PaymentTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Orders" Relationship="gb_MarketPlusModel.FK_Orders_PaymentTypes" FromRole="PaymentTypes" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="ProductProperties">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="PropertyId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyValueId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="gb_MarketPlusModel.FK_ProductProperties_Products" FromRole="ProductProperties" ToRole="Products" />
+          <NavigationProperty Name="Properties" Relationship="gb_MarketPlusModel.FK_ProductProperties_Properties" FromRole="ProductProperties" ToRole="Properties" />
+          <NavigationProperty Name="PropertyValues" Relationship="gb_MarketPlusModel.FK_ProductProperties_PropertyValues" FromRole="ProductProperties" ToRole="PropertyValues" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="SupplierId" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="MainArticleName" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="RetailPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TradePrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="PrimaryPrice" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="PriceUAH" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="Discount" Type="Byte" />
+          <Property Name="IsWarranty" Type="Boolean" Nullable="false" />
+          <Property Name="WarrantyPeriod" Type="Int16" />
+          <Property Name="IsHotProduct" Type="Boolean" Nullable="false" />
+          <Property Name="IsFreeDelivery" Type="Boolean" Nullable="false" />
+          <Property Name="Availability" Type="Byte" Nullable="false" />
+          <Property Name="MetaTitle" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="MetaKeywords" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+          <Property Name="MetaDescription" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="MetaKeywordsTags" Type="String" MaxLength="800" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ProductProperties" Relationship="gb_MarketPlusModel.FK_ProductProperties_Products" FromRole="Products" ToRole="ProductProperties" />
+          <NavigationProperty Name="PropertyValues" Relationship="gb_MarketPlusModel.FK_PropertyValues_Products" FromRole="Products" ToRole="PropertyValues" />
+        </EntityType>
+        <EntityType Name="Properties">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="Int32" Nullable="false" />
+          <Property Name="PropertyName" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="SubCategoryId" Type="Int32" />
+          <NavigationProperty Name="Categories" Relationship="gb_MarketPlusModel.FK_Properties_Categories" FromRole="Properties" ToRole="Categories" />
+          <NavigationProperty Name="ProductProperties" Relationship="gb_MarketPlusModel.FK_ProductProperties_Properties" FromRole="Properties" ToRole="ProductProperties" />
+          <NavigationProperty Name="SubCategories" Relationship="gb_MarketPlusModel.FK_Properties_SubCategories" FromRole="Properties" ToRole="SubCategories" />
+        </EntityType>
+        <EntityType Name="PropertyValues">
+          <Key>
+            <PropertyRef Name="ValueId" />
+          </Key>
+          <Property Name="ValueId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProductProperties" Relationship="gb_MarketPlusModel.FK_ProductProperties_PropertyValues" FromRole="PropertyValues" ToRole="ProductProperties" />
+          <NavigationProperty Name="Products" Relationship="gb_MarketPlusModel.FK_PropertyValues_Products" FromRole="PropertyValues" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Shops">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Byte" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="SubCategories">
+          <Key>
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="SubCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="SubCategoryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="gb_MarketPlusModel.FK_SubCategories_Categories" FromRole="SubCategories" ToRole="Categories" />
+          <NavigationProperty Name="Properties" Relationship="gb_MarketPlusModel.FK_Properties_SubCategories" FromRole="SubCategories" ToRole="Properties" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int64" Nullable="false" />
+          <Property Name="SupplierName" Type="String" Nullable="false" MaxLength="800" Unicode="false" FixedLength="false" />
+          <Property Name="ManagerName" Type="String" Nullable="false" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="true" />
+          <Property Name="ICQ" Type="String" MaxLength="9" Unicode="false" FixedLength="true" />
+          <Property Name="Skype" Type="String" MaxLength="50" Unicode="false" FixedLength="true" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Schedule" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Transporters">
+          <Key>
+            <PropertyRef Name="TransporterId" />
+          </Key>
+          <Property Name="TransporterId" Type="Int16" Nullable="false" />
+          <Property Name="TransporterName" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="PriceUAH" Type="Int16" Nullable="false" />
+          <Property Name="PriceUSD" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="Int16" Nullable="false" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FIO" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="true" />
+          <Property Name="IsDeteled" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Orders_AmountTypes">
+          <End Role="AmountTypes" Type="gb_MarketPlusModel.AmountTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AmountTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AmountTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Areas">
+          <End Role="Areas" Type="gb_MarketPlusModel.Areas" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Categories">
+          <End Role="Categories" Type="gb_MarketPlusModel.Categories" Multiplicity="0..1" />
+          <End Role="Properties" Type="gb_MarketPlusModel.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubCategories_Categories">
+          <End Role="Categories" Type="gb_MarketPlusModel.Categories" Multiplicity="1" />
+          <End Role="SubCategories" Type="gb_MarketPlusModel.SubCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="SubCategories">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Cities">
+          <End Role="Cities" Type="gb_MarketPlusModel.Cities" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CitieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DelivaryPays">
+          <End Role="DelivaryPays" Type="gb_MarketPlusModel.DelivaryPays" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DelivaryPays">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DelivaryPayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DelivaryTypes">
+          <End Role="DelivaryTypes" Type="gb_MarketPlusModel.DelivaryTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DelivaryTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_DocumentTypes">
+          <End Role="DocumentTypes" Type="gb_MarketPlusModel.DocumentTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DocumentTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="DocumentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderProducts_Orders">
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="1" />
+          <End Role="OrderProducts" Type="gb_MarketPlusModel.OrderProducts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderProducts">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderStatus">
+          <End Role="OrderStatus" Type="gb_MarketPlusModel.OrderStatus" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OrderStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_OrderTypes">
+          <End Role="OrderTypes" Type="gb_MarketPlusModel.OrderTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="OrderTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_PaymentTypes">
+          <End Role="PaymentTypes" Type="gb_MarketPlusModel.PaymentTypes" Multiplicity="1" />
+          <End Role="Orders" Type="gb_MarketPlusModel.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="PaymentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_Products">
+          <End Role="Products" Type="gb_MarketPlusModel.Products" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_Properties">
+          <End Role="Properties" Type="gb_MarketPlusModel.Properties" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Properties">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProperties_PropertyValues">
+          <End Role="PropertyValues" Type="gb_MarketPlusModel.PropertyValues" Multiplicity="1" />
+          <End Role="ProductProperties" Type="gb_MarketPlusModel.ProductProperties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValues">
+              <PropertyRef Name="ValueId" />
+            </Principal>
+            <Dependent Role="ProductProperties">
+              <PropertyRef Name="PropertyValueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PropertyValues_Products">
+          <End Role="Products" Type="gb_MarketPlusModel.Products" Multiplicity="1" />
+          <End Role="PropertyValues" Type="gb_MarketPlusModel.PropertyValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="PropertyValues">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_SubCategories">
+          <End Role="SubCategories" Type="gb_MarketPlusModel.SubCategories" Multiplicity="0..1" />
+          <End Role="Properties" Type="gb_MarketPlusModel.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategories">
+              <PropertyRef Name="SubCategoryId" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="SubCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gb_MarketPlusModelStoreContainer" CdmEntityContainer="StorageEntity">
+          <EntitySetMapping Name="AmountTypes">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.AmountTypes">
+              <MappingFragment StoreEntitySet="AmountTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Areas">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blacklist">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Blacklist">
+              <MappingFragment StoreEntitySet="Blacklist">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Brands">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="SecondCategoryName" ColumnName="SecondCategoryName" />
+                <ScalarProperty Name="MultimediaId" ColumnName="MultimediaId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaKeywordsTags" ColumnName="MetaKeywordsTags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Cities">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="RussianCityName" ColumnName="RussianCityName" />
+                <ScalarProperty Name="UrkainianCityName" ColumnName="UrkainianCityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Currencies">
+              <MappingFragment StoreEntitySet="Currencies">
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="CurrencyName" ColumnName="CurrencyName" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="PriceFormat" ColumnName="PriceFormat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DelivaryPays">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.DelivaryPays">
+              <MappingFragment StoreEntitySet="DelivaryPays">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DelivaryTypes">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.DelivaryTypes">
+              <MappingFragment StoreEntitySet="DelivaryTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentTypes">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.DocumentTypes">
+              <MappingFragment StoreEntitySet="DocumentTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Newsletters">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Newsletters">
+              <MappingFragment StoreEntitySet="Newsletters">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderProducts">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.OrderProducts">
+              <MappingFragment StoreEntitySet="OrderProducts">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="OrderTypeId" ColumnName="OrderTypeId" />
+                <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+                <ScalarProperty Name="DelivaryTypeId" ColumnName="DelivaryTypeId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="CitieId" ColumnName="CitieId" />
+                <ScalarProperty Name="DelivaryPayId" ColumnName="DelivaryPayId" />
+                <ScalarProperty Name="OrderStatusId" ColumnName="OrderStatusId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DispatchId" ColumnName="DispatchId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="DocumentTypeId" ColumnName="DocumentTypeId" />
+                <ScalarProperty Name="IsDocumentRequaried" ColumnName="IsDocumentRequaried" />
+                <ScalarProperty Name="IsRequariedAnotherDocument" ColumnName="IsRequariedAnotherDocument" />
+                <ScalarProperty Name="AmountTypeId" ColumnName="AmountTypeId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="AdminComment" ColumnName="AdminComment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.OrderStatus">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderTypes">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.OrderTypes">
+              <MappingFragment StoreEntitySet="OrderTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTypes">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.PaymentTypes">
+              <MappingFragment StoreEntitySet="PaymentTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductProperties">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.ProductProperties">
+              <MappingFragment StoreEntitySet="ProductProperties">
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="PropertyValueId" ColumnName="PropertyValueId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="MainArticleName" ColumnName="MainArticleName" />
+                <ScalarProperty Name="RetailPrice" ColumnName="RetailPrice" />
+                <ScalarProperty Name="TradePrice" ColumnName="TradePrice" />
+                <ScalarProperty Name="PrimaryPrice" ColumnName="PrimaryPrice" />
+                <ScalarProperty Name="PriceUAH" ColumnName="PriceUAH" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="IsWarranty" ColumnName="IsWarranty" />
+                <ScalarProperty Name="WarrantyPeriod" ColumnName="WarrantyPeriod" />
+                <ScalarProperty Name="IsHotProduct" ColumnName="IsHotProduct" />
+                <ScalarProperty Name="IsFreeDelivery" ColumnName="IsFreeDelivery" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="MetaKeywordsTags" ColumnName="MetaKeywordsTags" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Properties">
+              <MappingFragment StoreEntitySet="Properties">
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyValues">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.PropertyValues">
+              <MappingFragment StoreEntitySet="PropertyValues">
+                <ScalarProperty Name="ValueId" ColumnName="ValueId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shops">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Shops">
+              <MappingFragment StoreEntitySet="Shops">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubCategories">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.SubCategories">
+              <MappingFragment StoreEntitySet="SubCategories">
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Suppliers">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ManagerName" ColumnName="ManagerName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="ICQ" ColumnName="ICQ" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transporters">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Transporters">
+              <MappingFragment StoreEntitySet="Transporters">
+                <ScalarProperty Name="TransporterId" ColumnName="TransporterId" />
+                <ScalarProperty Name="TransporterName" ColumnName="TransporterName" />
+                <ScalarProperty Name="PriceUAH" ColumnName="PriceUAH" />
+                <ScalarProperty Name="PriceUSD" ColumnName="PriceUSD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Units">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="gb_MarketPlusModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="IsDeteled" ColumnName="IsDeteled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="StorageEntity" ZoomLevel="85">
+        <EntityTypeShape EntityType="gb_MarketPlusModel.AmountTypes" Width="1.5" PointX="0.75" PointY="3.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Areas" Width="1.5" PointX="0.75" PointY="6.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Blacklist" Width="1.5" PointX="5.75" PointY="0.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Brands" Width="1.5" PointX="2.75" PointY="8.75" Height="1.4033821614583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Categories" Width="1.5" PointX="5.75" PointY="8" Height="3.1340950520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Cities" Width="1.5" PointX="0.75" PointY="9.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Currencies" Width="1.5" PointX="2.75" PointY="11.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.DelivaryPays" Width="1.5" PointX="0.75" PointY="11.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.DelivaryTypes" Width="1.5" PointX="0.75" PointY="14" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.DocumentTypes" Width="1.5" PointX="0.75" PointY="16.375" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Newsletters" Width="1.5" PointX="12.75" PointY="0.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.OrderProducts" Width="1.5" PointX="5.25" PointY="3.625" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Orders" Width="1.5" PointX="3" PointY="1.125" Height="6.5955208333333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.OrderStatus" Width="1.5" PointX="0.75" PointY="18.75" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.OrderTypes" Width="1.5" PointX="0.75" PointY="21.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.PaymentTypes" Width="1.5" PointX="0.75" PointY="23.375" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.ProductProperties" Width="1.5" PointX="12.5" PointY="9.75" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Products" Width="1.5" PointX="10.25" PointY="2.75" Height="5.4417122395833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Properties" Width="1.5" PointX="10.25" PointY="9.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.PropertyValues" Width="1.5" PointX="10.25" PointY="13" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Shops" Width="1.5" PointX="12.75" PointY="3.75" Height="1.4033821614583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.SubCategories" Width="1.5" PointX="8" PointY="11.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Suppliers" Width="1.5" PointX="4.75" PointY="12.75" Height="2.7494921875000102" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="6.75" Height="1.9802864583333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Transporters" Width="1.5" PointX="12.75" PointY="12.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Units" Width="1.5" PointX="14.75" PointY="0.75" Height="1.4033821614583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="gb_MarketPlusModel.Users" Width="1.5" PointX="14.75" PointY="3.75" Height="1.9802864583333246" IsExpanded="true" />
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_AmountTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.422841796875" />
+          <ConnectorPoint PointX="3" PointY="4.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_Areas" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.2352604166666659" />
+          <ConnectorPoint PointX="3" PointY="7.2352604166666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Properties_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="10.442047526041668" />
+          <ConnectorPoint PointX="8.6666666666666661" PointY="10.442047526041668" />
+          <ConnectorPoint PointX="8.8333333333333339" PointY="10.442047526041668" />
+          <ConnectorPoint PointX="10.25" PointY="10.442047526041668" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_SubCategories_Categories" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="9.1897712630208339" />
+          <ConnectorPoint PointX="8.75" PointY="9.1897712630208339" />
+          <ConnectorPoint PointX="8.75" PointY="11.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_Cities" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="10.56443359375" />
+          <ConnectorPoint PointX="4.40625" PointY="10.56443359375" />
+          <ConnectorPoint PointX="4.40625" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_DelivaryPays" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.65625" />
+          <ConnectorPoint PointX="4.3749975" PointY="11.65625" />
+          <ConnectorPoint PointX="4.3749975" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_DelivaryTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.797841796875" />
+          <ConnectorPoint PointX="4.2604154166666666" PointY="14.797841796875" />
+          <ConnectorPoint PointX="4.4270820833333326" PointY="14.797841796875" />
+          <ConnectorPoint PointX="4.4375025" PointY="14.797841796875" />
+          <ConnectorPoint PointX="4.4375025" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_DocumentTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="17.172841796874998" />
+          <ConnectorPoint PointX="4.34374875" PointY="17.172841796874998" />
+          <ConnectorPoint PointX="4.34374875" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_OrderProducts_Orders" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.4228417968750016" />
+          <ConnectorPoint PointX="5.25" PointY="4.4228417968750016" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_OrderStatus" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="19.547841796875" />
+          <ConnectorPoint PointX="4.46875125" PointY="19.547841796875" />
+          <ConnectorPoint PointX="4.46875125" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_OrderTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="21.922841796875" />
+          <ConnectorPoint PointX="4.39062375" PointY="21.922841796875" />
+          <ConnectorPoint PointX="4.39062375" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Orders_PaymentTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="24.172841796875" />
+          <ConnectorPoint PointX="4.42187625" PointY="24.172841796875" />
+          <ConnectorPoint PointX="4.42187625" PointY="7.7205208333333317" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_ProductProperties_Products" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.75" PointY="5.9516910807291694" />
+          <ConnectorPoint PointX="12.59375" PointY="5.9516910807291694" />
+          <ConnectorPoint PointX="12.59375" PointY="9.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_ProductProperties_Properties" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.75" PointY="10.836293945312502" />
+          <ConnectorPoint PointX="12.041666666666666" PointY="10.836293945312502" />
+          <ConnectorPoint PointX="12.208333333333334" PointY="10.836293945312502" />
+          <ConnectorPoint PointX="12.5" PointY="10.836293945312502" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_ProductProperties_PropertyValues" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.75" PointY="14.790385742187503" />
+          <ConnectorPoint PointX="12.59375" PointY="14.790385742187503" />
+          <ConnectorPoint PointX="12.59375" PointY="11.922587890625003" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_PropertyValues_Products" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.75" PointY="8.1917122395833388" />
+          <ConnectorPoint PointX="12.125" PointY="8.5667122395833388" />
+          <ConnectorPoint PointX="12.125" PointY="12.625" />
+          <ConnectorPoint PointX="11.75" PointY="13" />
+        </AssociationConnector>
+        <AssociationConnector Association="gb_MarketPlusModel.FK_Properties_SubCategories" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.5" PointY="11.932444661458334" />
+          <ConnectorPoint PointX="10.25" PointY="11.932444661458334" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
