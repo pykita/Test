@@ -1,0 +1,14 @@
+﻿@model ShopPlus.Models.Areas.AreaModel
+
+@{
+    ViewBag.Title = "Areas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="@Url.Action("Create", "Areas")">Добавить Район</a>
+<ul>
+    @foreach (var item in Model.AreaItems)
+    {
+        @Html.Partial("Partial/_AreaItem", item)
+        
+    }
+</ul>

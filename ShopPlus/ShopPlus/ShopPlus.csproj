@@ -107,22 +107,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AreasController.cs" />
     <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Areas\AreaItem.cs" />
+    <Compile Include="Models\Areas\AreaModel.cs" />
     <Compile Include="Models\Brands\BrandItem.cs" />
     <Compile Include="Models\Brands\BrandsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AreasService.cs" />
     <Compile Include="Service\BrandsService.cs" />
+    <Compile Include="Service\IAreasServices.cs" />
     <Compile Include="Service\IBrandsService.cs" />
     <Compile Include="StorageEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StorageEntity.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Storage\AreasStorage.cs" />
     <Compile Include="Storage\BrandsStorage.cs" />
     <Compile Include="Storage\IBrandsStorage.cs" />
+    <Compile Include="Storage\IAreasStorage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -172,6 +179,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Brands\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Areas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Areas\Partial\_AreaItem.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Areas\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Areas\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

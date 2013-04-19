@@ -1,0 +1,12 @@
+﻿@model ShopPlus.Models.Areas.AreaItem
+
+@{
+    ViewBag.Title = "Редактировать";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}  
+@using (Html.BeginForm("Edit", "Areas"))
+{
+    <span>Имя: </span>@Html.EditorFor(x => x.AreaName)
+    <input type="submit" value="Сохранить"/>
+}
+

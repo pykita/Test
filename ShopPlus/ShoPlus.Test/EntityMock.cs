@@ -27,5 +27,29 @@ namespace ShopPlus.Test
         {
             return m_Brands;
         }
+
+        private IQueryable<AreasNew> m_Areas = new[]
+            {
+                new AreasNew
+                    {
+                        AreaId = 0,
+                        AreaName = "New Area"
+                    },
+                new AreasNew
+                    {
+                        AreaId = 1,
+                        AreaName = "Abibas"
+                    },
+                new AreasNew
+                    {
+                        AreaId = 2,
+                        AreaName = "Rita"
+                    }
+            }.AsQueryable();
+
+        public IQueryable<AreasNew> Areas()
+        {
+            return m_Areas;
+        }
     }
 }
